@@ -120,25 +120,6 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
 
-  alertmanager:
-    image: prom/alertmanager:v0.24.0
-    restart: on-failure
-    volumes:
-      - ./config/alertmanager.yml:/etc/alertmanager/config.yml
-      - ~/alertmanager_data:/alertmanager
-    ports:
-      - 9093:9093
-    command:
-      - '--config.file=/etc/alertmanager/config.yml'
-      - '--storage.path=/alertmanager'
-
-  mailhog:
-    image: mailhog/mailhog:v1.0.1
-    restart: on-failure
-    ports:
-      - '1025:1025'
-      - '8025:8025'
-
   vector:
     image: timberio/vector:0.28.X-alpine
     volumes:

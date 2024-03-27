@@ -66,7 +66,7 @@ projects:
   # Other projects can be used to monitor your applications.
   # To monitor micro-services or multiple related services, use a single project.
   - id: 2
-    name: My project
+    name: Yokohama Symphostage
     token: project2_secret_token
     pinned_attrs:
       - service_name
@@ -76,10 +76,9 @@ projects:
 
 auth:
   users:
-    - name: John Doe
+    - name: Admin
       email: uptrace@localhost
       password: uptrace
-      notify_by_email: true
 
   # Cloudflare Zero Trust Access (Identity)
   # See https://developers.cloudflare.com/cloudflare-one/identity/ for more info.
@@ -233,18 +232,6 @@ service_graph:
     size: 1000000
     # For how long the incomplete edges are stored.
     ttl: 5s
-
-##
-## SMTP settings to send emails.
-## https://uptrace.dev/get/alerting.html
-##
-smtp_mailer:
-  enabled: true
-  host: mailhog
-  port: 1025
-  username: mailhog
-  password: mailhog
-  from: 'uptrace@localhost'
 
 ##
 ## uptrace-go client configuration.
